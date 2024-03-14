@@ -21,7 +21,7 @@ from email import encoders
 def find_email_addresses(text):
     return re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', text)
 
-email_addresses = ["aditya034@e.ntu.edu.sg","apaditya.2005@gmail.com"]
+email_addresses = ["exampleemail.com","exampleemail.com"]
 
 def send_emails_with_attachments(email_addresses, subject, body, attachment_paths):
     sender_email = "youremail@email.com"
