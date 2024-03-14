@@ -10,14 +10,14 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 # Function to extract text from PDF
-"""def extract_text_from_pdf(pdf_path):
+def extract_text_from_pdf(pdf_path):
     with open(pdf_path, 'rb') as file:
         reader = PyPDF2.PdfFileReader(file)
         text = ""
         for page in range(reader.numPages):
             text += reader.getPage(page).extractText()
         return text
-"""
+
 def find_email_addresses(text):
     return re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', text)
 
@@ -62,28 +62,14 @@ def send_emails_with_attachments(email_addresses, subject, body, attachment_path
             smtp.send_message(msg)
             print(f"Email sent to {email}")
 
-# Example usage
-attachment_paths = ["Academic_Transcript.pdf", "ap_aditya_resume.pdf"]
-# Example usage
+
+attachment_paths = ["example.pdf", "example.pdf"]
+
 pdf_path = "path_to_your_pdf.pdf"
-#text = extract_text_from_pdf(pdf_path)
-#email_addresses = find_email_addresses(text)
+text = extract_text_from_pdf(pdf_path)
+email_addresses = find_email_addresses(text)
 
-subject = "Application for Internship"
-body = """Dear Sir/Ma’am
-
-My name is Anand Pramod Aditya, I’m currently a sophomore studying computer science at Nanyang Technological University. I’m writing to you to apply for an internship role at your company this summer. 
-
-
-I understand you’re probably busy so I’ll keep this brief. My journey in computing began in 2019 and since then I’ve gained proficiency in several languages and frameworks most notably Python, Javascript and SQL. Through my experiences in internships, projects, hackathons and coursework, I’ve gained a huge passion and a decent skill set in the field of computing in specific AI, data analysis and software development and the practical applications.
-
-
-While I may be inexperienced, I’m deeply passionate about computing and am just looking for an opportunity to learn in a practical environment. I apply to your company purely out of my passion to grow and learn in this field and not as an academic requirement, or any monetary gain and am open to working for any salary your company deems fit. I believe being able to work at a dynamic startup that utilizes technology to make a real world impact is the most suitable environment for me to grow and thus I hope you can consider my sincere application to your company.
-
-
-I’ve attached my resume and academic transcript for more details on my experiences and skill set, kindly let me know if you’d require anything else. Looking forward to hearing back from you.
-
-
-Regards """
+subject = ""
+body = """ """
 
 send_emails_with_attachments(email_addresses, subject, body, attachment_paths)
