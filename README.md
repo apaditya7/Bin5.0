@@ -34,3 +34,14 @@ Clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/your-username/email-automation.git
+
+
+## Usage
+To use this script:
+
+Open send_email.py (this file name is an example, replace with your actual file name) in your favorite editor.
+Edit the SENDER_EMAIL, SENDER_PASSWORD, RECIPIENT_EMAIL, and other configuration settings as per your requirement.
+Place the files you want to attach in the designated directory (if attachment functionality is used).
+
+## Security Note
+The script requires your email credentials. Do not share the modified script with your credentials intact. Avoid hard-coding credentials; instead, use environment variables or input prompts to supply these details securely.
